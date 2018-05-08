@@ -1,0 +1,78 @@
+<div class="page-head">
+
+  <div class="row">
+
+    <div class="col-md-12">
+      <h2>Create Customer</h2>
+    </div>
+
+
+  </div>
+</div>
+
+
+<div class="inner-content">
+
+  <div class="">
+    <div class="col-md-12">
+      <div class="row">
+        <form [formGroup]="customerForm" novalidate (submit)="customerForm.valid && saveCustomer()">
+          <div class="form-horizontal form-wrap m-b-15">
+            <div class="form-group">
+              <label class="col-lg-2 control-label">First Name <span class="req">*</span></label>
+              <div class="col-lg-6">
+                <input class="form-control" type="text" formControlName="firstName" />
+                <span *ngIf="(customerForm.controls.firstName.dirty||customerForm.controls.firstName.touched && customerForm.controls.firstName.errors)">
+                  <span *ngIf="customerForm.controls.firstName.errors && customerForm.controls.firstName.errors.required">
+                    name is required
+                  </span>
+                  <span *ngIf="customerForm.controls.firstName.errors && customerForm.controls.firstName.errors.minlength">
+                    name shoud be longer than 3 characters
+                  </span>
+                </span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-2 control-label">Last Name </label>
+              <div class="col-lg-6">
+                <input class="form-control" type="text" formControlName="lastName" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-2 control-label">Address</label>
+              <div class="col-lg-6">
+                <input class="form-control" type="text" formControlName="address" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-2 control-label">Mobile No</label>
+              <div class="col-lg-6">
+                <input class="form-control" type="text" formControlName="mobileNo" />
+                <span *ngIf="(customerForm.controls.mobileNo.dirty||customerForm.controls.mobileNo.touched && customerForm.controls.mobileNo.errors)">
+                  <span *ngIf="customerForm.controls.mobileNo.errors && customerForm.controls.mobileNo.errors.required">
+                    mobile no is required
+                  </span>
+                 
+                </span>
+              </div>
+            </div>
+         
+            <div class="form-group">
+              <label class="col-lg-2 control-label">Email <span class="req">*</span></label>
+              <div class="col-lg-6">
+                <input class="form-control" type="text" formControlName="email" />
+              </div>
+            </div>
+       
+            <div class="form-group">
+              <label class="col-lg-2 control-label"></label>
+              <div class="col-lg-6">
+              <button type="button" class="btn btn-primary">Save</button>
+              </div>
+            </div>
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
