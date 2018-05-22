@@ -1,3 +1,4 @@
+import { CustomerService } from './services/customer.service';
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -32,6 +33,8 @@ export const routes: Routes = [
     RouterModule.forChild(routes),
     ReactiveFormsModule
   ],
-  declarations: [CreateCustomerComponent, CustomerDetailsComponent]
+  declarations: [CreateCustomerComponent, CustomerDetailsComponent],
+  providers:[CustomerService],
+  exports:[]
 })
 export class CustomerModule { }

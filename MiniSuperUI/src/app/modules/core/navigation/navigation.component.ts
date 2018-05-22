@@ -11,15 +11,7 @@ export class NavigationComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(localStorage.getItem('userrole'));
-    if (localStorage.getItem('userrole').toString() == 'Admin') {
-      this.isAdmin = true;
-      console.log(this.isAdmin);
-    }
-    else {
-    this.isAdmin = false;
-      console.log(this.isAdmin);
-    }
+    
   }
 
 }
