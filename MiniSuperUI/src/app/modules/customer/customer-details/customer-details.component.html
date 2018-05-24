@@ -1,3 +1,71 @@
-<p>
-  customer-details works!
-</p>
+<div class="page-head">
+  <div class="row">
+    <div class="col-md-4">
+      <h2>Tickets</h2>
+      <ol class="breadcrumb">
+
+        <li>
+          <a>Customer</a>
+        </li>
+
+        <li class="active">
+          <a>Details</a>
+        </li>
+
+      </ol>
+    </div>
+    <div class="col-md-8">
+      <div class="top-btn-wrap">
+        <a class="btn btn-primary">NEW TICKET</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="inner-content">
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-fix form-wrap m-b-15">
+        <div class="col-md-12">
+          <div class="form-inline">
+
+            <div class="form-group pull-right">
+              <input type="text" [(ngModel)]="searchText" class="form-control search right-search" placeholder="Search">
+              <button class="btn btn-primary">GO</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-wrap">
+        <div class="table-wrapper table-responsive" id="no-more-tables">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Mobile No</th>
+                <th>Email</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Isuru</td>
+                <td>0713376636</td>
+                <td>isuru@gmail.com</td>
+              </tr>
+
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
