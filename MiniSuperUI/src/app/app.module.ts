@@ -1,3 +1,4 @@
+import { CustomerModel } from './modules/customer/models/customerModel';
 import { CoreModule } from './modules/core/core.module';
 import { CustomerModule } from './modules/customer/customer.module';
 import { BrowserModule } from '@angular/platform-browser';

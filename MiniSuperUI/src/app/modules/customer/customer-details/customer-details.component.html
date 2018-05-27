@@ -1,7 +1,7 @@
 <div class="page-head">
   <div class="row">
     <div class="col-md-4">
-      <h2>Tickets</h2>
+      <h2>Customers</h2>
       <ol class="breadcrumb">
 
         <li>
@@ -16,7 +16,7 @@
     </div>
     <div class="col-md-8">
       <div class="top-btn-wrap">
-        <a class="btn btn-primary">NEW TICKET</a>
+        <a class="btn btn-primary" [routerLink]="['/customer/createCustomer']">NEW CUSTOMER</a>
       </div>
     </div>
   </div>
@@ -50,13 +50,16 @@
                 <th>Name</th>
                 <th>Mobile No</th>
                 <th>Email</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Isuru</td>
-                <td>0713376636</td>
-                <td>isuru@gmail.com</td>
+              <tr *ngFor="let customer of customers">
+                <td>{{customer.firstName}} {{customer.lastName}}</td>
+                <td>{{customer.mobileNo}}</td>
+                <td>{{customer.email}}</td>
+                <td> <button type="button" (click)="editCustomer(customer.id)" class="btn btn-primary btn-xs">EDIT</button>
+                  <button type="button" (click)="deleteCustomer(customer.id)" class="btn btn-danger btn-xs">DELETE</button></td>
               </tr>
 
             </tbody>

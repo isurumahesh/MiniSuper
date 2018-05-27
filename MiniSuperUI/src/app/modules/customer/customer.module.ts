@@ -8,21 +8,18 @@ import { CustomerDetailsComponent } from './customer-details/customer-details.co
 
 
 export const routes: Routes = [
+ 
   {
-    path: 'customers',
-    component: CustomerDetailsComponent,
-    children: [
-      {
-        path: '', component: CustomerDetailsComponent,
-      },
-      {
-        path: 'customer', component: CreateCustomerComponent,
-      },
-      {
-        path: 'customer/:id', component: CreateCustomerComponent
-      },
-    ]
+    path: '', component: CustomerDetailsComponent,
   },
+  {
+    path: 'createCustomer', component: CreateCustomerComponent,
+  },
+  {
+    path: 'updateCustomer/:id', component: CreateCustomerComponent
+  },
+
+
 ];
 
 
@@ -30,11 +27,12 @@ export const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule.forChild(routes),
+    RouterModule,
+  //  RouterModule.forChild(routes),
     ReactiveFormsModule
   ],
   declarations: [CreateCustomerComponent, CustomerDetailsComponent],
-  providers:[CustomerService],
-  exports:[]
+  providers: [CustomerService],
+  exports: []
 })
 export class CustomerModule { }
