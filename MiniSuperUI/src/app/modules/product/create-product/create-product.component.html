@@ -1,3 +1,49 @@
-<p>
-  create-product works!
-</p>
+<div class="page-head">
+
+  <div class="row">
+
+    <div class="col-md-12">
+      <h2>Create Product</h2>
+    </div>
+
+
+  </div>
+</div>
+
+
+<div class="inner-content">
+
+  <div class="">
+    <div class="col-md-12">
+      <div class="row">
+        <form [formGroup]="productForm" novalidate (submit)="saveProduct()">
+          <div class="form-horizontal form-wrap m-b-15">
+
+
+            <div class="form-group">
+              <label class="col-lg-2 control-label">Name</label>
+              <div class="col-lg-6">
+                <input class="form-control" type="text" formControlName="name" />
+              </div>
+            </div>
+
+               <div class="form-group">
+              <label class="col-lg-2 control-label">Price</label>
+              <div class="col-lg-6">
+                <input class="form-control" type="text" formControlName="price" />
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <label class="col-lg-2 control-label"></label>
+              <div class="col-lg-6">
+                <button type="submit" class="btn btn-primary">Save</button>
+              </div>
+            </div>
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

@@ -1,25 +1,21 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { CreateCustomerComponent } from './modules/customer/create-customer/create-customer.component';
-import { CustomerDetailsComponent } from './modules/customer/customer-details/customer-details.component';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
-const appRoutes: Routes = [
+
+export const appRoutes: Routes = [
   {
     path: '', redirectTo: '/customer', pathMatch: 'full',
   },
+
   {
-    path: 'customer', component: CustomerDetailsComponent,
+    path: 'product', loadChildren: './modules/product/product.module#ProductModule',
   },
-  {
-    path: 'createCustomer', component: CreateCustomerComponent,
-  },
-  {
-    path: 'updateCustomer/:id', component: CreateCustomerComponent
-  },
+
 ];
 
+
 @NgModule({
-  imports: [RouterModule.forRoot(appRoutes)],
+  imports: [RouterModule.forRoot(appRoutes, { preloadingStrategy: PreloadAllModules })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

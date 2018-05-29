@@ -1,5 +1,4 @@
 import { BlockUIService } from './services/blockUI.service';
-import { HttpClient } from './services/HttpClient';
 import { HeaderComponent } from './header/header.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { NgModule, Optional, SkipSelf, ModuleWithProviders } from '@angular/core';
@@ -11,7 +10,6 @@ import { RouterModule } from '@angular/router';
     CommonModule, RouterModule
   ],
   declarations: [HeaderComponent, NavigationComponent],
-
   exports: [NavigationComponent, HeaderComponent],
 })
 export class CoreModule {
@@ -26,7 +24,7 @@ export class CoreModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: CoreModule,
-      providers: [BlockUIService, HttpClient]
+      providers: []
     };
   }
 

@@ -1,4 +1,4 @@
-import { CustomerModel } from './modules/customer/models/customerModel';
+import { RouterModule } from '@angular/router';
 import { CoreModule } from './modules/core/core.module';
 import { CustomerModule } from './modules/customer/customer.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -23,7 +23,7 @@ import { InMemCustomerService } from './modules/core/services/InMemCustomerServi
     HttpClientInMemoryWebApiModule.forRoot(InMemCustomerService),
     AppRoutingModule,
     CustomerModule,
-    CoreModule,
+    CoreModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

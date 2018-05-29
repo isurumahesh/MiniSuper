@@ -1,3 +1,4 @@
+import { CustomerRoutingModule } from './customer-routing.module';
 import { CustomerService } from './services/customer.service';
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -5,23 +6,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateCustomerComponent } from './create-customer/create-customer.component';
 import { CustomerDetailsComponent } from './customer-details/customer-details.component';
-
-
-export const routes: Routes = [
- 
-  {
-    path: '', component: CustomerDetailsComponent,
-  },
-  {
-    path: 'createCustomer', component: CreateCustomerComponent,
-  },
-  {
-    path: 'updateCustomer/:id', component: CreateCustomerComponent
-  },
-
-
-];
-
+import { CustomerComponent } from './customer.component';
 
 @NgModule({
   imports: [
@@ -29,9 +14,10 @@ export const routes: Routes = [
     FormsModule,
     RouterModule,
   //  RouterModule.forChild(routes),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CustomerRoutingModule
   ],
-  declarations: [CreateCustomerComponent, CustomerDetailsComponent],
+  declarations: [CreateCustomerComponent, CustomerDetailsComponent, CustomerComponent],
   providers: [CustomerService],
   exports: []
 })
