@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const productRoutes: Routes = [
-  {path: '',component: ProductDetailsComponent},
+  { path: '', component: ProductDetailsComponent },
   { path: 'createProduct', component: CreateProductComponent },
   { path: 'updateProduct/:id', component: CreateProductComponent }
 

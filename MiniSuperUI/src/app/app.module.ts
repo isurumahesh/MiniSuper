@@ -1,3 +1,4 @@
+import { OrderModule } from './modules/order/order.module';
 import { RouterModule } from '@angular/router';
 import { CoreModule } from './modules/core/core.module';
 import { CustomerModule } from './modules/customer/customer.module';
@@ -23,6 +24,7 @@ import { InMemCustomerService } from './modules/core/services/InMemCustomerServi
     HttpClientInMemoryWebApiModule.forRoot(InMemCustomerService),
     AppRoutingModule,
     CustomerModule,
+    OrderModule,
     CoreModule.forRoot(),
   ],
   providers: [],

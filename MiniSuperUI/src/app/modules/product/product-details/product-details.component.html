@@ -1,3 +1,74 @@
-<p>
-  product-details works!
-</p>
+<div class="page-head">
+  <div class="row">
+    <div class="col-md-4">
+      <h2>Products</h2>
+      <ol class="breadcrumb">
+
+        <li>
+          <a>Product</a>
+        </li>
+
+        <li class="active">
+          <a>Details</a>
+        </li>
+
+      </ol>
+    </div>
+    <div class="col-md-8">
+      <div class="top-btn-wrap">
+        <a class="btn btn-primary" [routerLink]="['/product/createProduct']">NEW PRODUCT</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="inner-content">
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-fix form-wrap m-b-15">
+        <div class="col-md-12">
+          <div class="form-inline">
+
+            <div class="form-group pull-right">
+              <input type="text" [(ngModel)]="searchText" class="form-control search right-search" placeholder="Search">
+              <button class="btn btn-primary">GO</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-wrap">
+        <div class="table-wrapper table-responsive" id="no-more-tables">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Price</th>
+
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let product of products">
+                <td>{{product.name}}</td>
+                <td>{{product.price|number : '1.2-2'}}</td>
+
+                <td> <button type="button" (click)="editProduct(product.id)" class="btn btn-primary btn-xs">EDIT</button>
+                  <button type="button" (click)="deleteProduct(product.id)" class="btn btn-danger btn-xs">DELETE</button></td>
+              </tr>
+
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

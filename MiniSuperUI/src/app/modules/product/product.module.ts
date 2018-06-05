@@ -1,6 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { ProductService } from './services/product.service';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -13,7 +13,8 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     CommonModule,
     ReactiveFormsModule,
     ProductRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   declarations: [CreateProductComponent, ProductDetailsComponent],
   providers: [ProductService]

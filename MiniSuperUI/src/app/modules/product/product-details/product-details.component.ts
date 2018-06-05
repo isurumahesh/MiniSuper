@@ -1,3 +1,5 @@
+import { ProductService } from './../services/product.service';
+import { ProductModel } from './../models/productModel';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductDetailsComponent implements OnInit {
 
-  constructor() { }
+  products: ProductModel[] = [];
+
+  constructor(private productService: ProductService) { }
 
   ngOnInit() {
+    this.productService.getProducts().subscribe(res => {
+      this.products = res;
+      console.log(res)
+    }, error => {
+
+    }, () => {
+
+    })
+  }
+
+  editProduct(id: number) {
+
+  }
+
+  deleteProduct(id: number) {
+    this.productService.deleteProduct(id).subscribe(res => {
+
+    }, error => {
+
+    },
+      () => {
+
+      })
   }
 
 }

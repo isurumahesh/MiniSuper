@@ -16,11 +16,21 @@ export class CustomerDetailsComponent implements OnInit {
   ngOnInit() {
     this.customerService.getCustomers().subscribe(res => {
       this.customers = res;
+      console.log(res)
     }, error => {
 
     }, () => {
 
     })
+
+    // this.customerService.getProducts().subscribe(res => {
+     
+    //   console.log(res)
+    // }, error => {
+
+    // }, () => {
+
+    // })
   }
 
   editCustomer(id: number) {
