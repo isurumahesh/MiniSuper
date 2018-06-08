@@ -48,6 +48,7 @@
             <thead>
               <tr>
                 <th>Name</th>
+                <td>Address</td>
                 <th>Mobile No</th>
                 <th>Email</th>
                 <th></th>
@@ -56,10 +57,13 @@
             <tbody>
               <tr *ngFor="let customer of customers">
                 <td>{{customer.firstName}} {{customer.lastName}}</td>
+                <td>{{customer.address}}</td>
                 <td>{{customer.mobileNo}}</td>
                 <td>{{customer.email}}</td>
-                <td> <button type="button" (click)="editCustomer(customer.id)" class="btn btn-primary btn-xs">EDIT</button>
-                  <button type="button" (click)="deleteCustomer(customer.id)" class="btn btn-danger btn-xs">DELETE</button></td>
+                <td>
+                  <button type="button" (click)="editCustomer(customer.id)" class="btn btn-primary btn-xs">EDIT</button>
+                  <button type="button" (click)="deleteCustomer(customer)" class="btn btn-danger btn-xs">DELETE</button>
+                </td>
               </tr>
 
             </tbody>
