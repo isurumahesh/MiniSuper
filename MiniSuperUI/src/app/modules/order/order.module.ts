@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { OrderComponent } from './order.component';
 import { OrderDetailsComponent } from './order-details/order-details.component';
 import { CreateOrderComponent } from './create-order/create-order.component';
@@ -10,6 +11,7 @@ import { OrderRoutingModule } from './order-routing.module';
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     OrderRoutingModule
   ],
   declarations: [CreateOrderComponent, OrderDetailsComponent,OrderComponent],

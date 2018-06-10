@@ -28,7 +28,7 @@ export class CustomerDetailsComponent implements OnInit {
   }
 
   editCustomer(id: number) {
-    this.router.navigate(['/customer/updateCustomer', id])
+    this.router.navigate(['/customer/editCustomer', id])
   }
 
   deleteCustomer(customer: CustomerModel) {

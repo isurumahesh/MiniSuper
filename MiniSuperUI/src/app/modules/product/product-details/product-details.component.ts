@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class ProductDetailsComponent implements OnInit {
 
   products: ProductModel[] = [];
+  notImplemented = true;
 
   constructor(private productService: ProductService) { }
 

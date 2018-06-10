@@ -6,19 +6,19 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 const customRoutes: Routes = [
- {
+    {
         path: 'customer',
-        component: CustomerComponent, 
+        component: CustomerComponent,
         children: [
-            { path: '', component: CustomerDetailsComponent },         
+            { path: '', component: CustomerDetailsComponent },
             { path: 'createCustomer', component: CreateCustomerComponent },
-            { path: 'updateCustomer/:id', component: CreateCustomerComponent }
+            { path: 'editCustomer/:id', component: CreateCustomerComponent }
         ]
     },
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(customRoutes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forChild(customRoutes)],
+    exports: [RouterModule]
 })
 export class CustomerRoutingModule { }

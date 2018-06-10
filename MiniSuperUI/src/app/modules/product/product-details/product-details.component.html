@@ -15,7 +15,7 @@
       </ol>
     </div>
     <div class="col-md-8">
-      <div class="top-btn-wrap">
+      <div class="top-btn-wrap" *ngIf="!notImplemented">
         <a class="btn btn-primary" [routerLink]="['/product/createProduct']">NEW PRODUCT</a>
       </div>
     </div>
@@ -30,7 +30,7 @@
         <div class="col-md-12">
           <div class="form-inline">
 
-            <div class="form-group pull-right">
+            <div class="form-group pull-right" *ngIf="!notImplemented">
               <input type="text" [(ngModel)]="searchText" class="form-control search right-search" placeholder="Search">
               <button class="btn btn-primary">GO</button>
             </div>
@@ -58,7 +58,7 @@
                 <td>{{product.name}}</td>
                 <td>{{product.price|number : '1.2-2'}}</td>
 
-                <td> <button type="button" (click)="editProduct(product.id)" class="btn btn-primary btn-xs">EDIT</button>
+                <td *ngIf="!notImplemented"> <button type="button" (click)="editProduct(product.id)" class="btn btn-primary btn-xs">EDIT</button>
                   <button type="button" (click)="deleteProduct(product.id)" class="btn btn-danger btn-xs">DELETE</button></td>
               </tr>
 

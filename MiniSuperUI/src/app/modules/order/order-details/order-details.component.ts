@@ -1,3 +1,5 @@
+import { OrderModel } from './../models/orderModel';
+import { OrderService } from './../services/order.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderDetailsComponent implements OnInit {
 
-  constructor() { }
+  orders: OrderModel[] = [];
+  notImplemented=true;
+  constructor(private orderService: OrderService) { }
 
   ngOnInit() {
+    this.getOrders();
+  }
+
+  getOrders() {
+    this.orderService.getOrders().subscribe(res => {
+      this.orders = res;
+    },
+      error => { })
   }
 
 }

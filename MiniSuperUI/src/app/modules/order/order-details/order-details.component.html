@@ -1,3 +1,74 @@
-<p>
-  order-details works!
-</p>
+<div class="page-head">
+  <div class="row">
+    <div class="col-md-4">
+      <h2>Orders</h2>
+      <ol class="breadcrumb">
+
+        <li>
+          <a>Order</a>
+        </li>
+
+        <li class="active">
+          <a>Details</a>
+        </li>
+
+      </ol>
+    </div>
+    <div class="col-md-8">
+      <div class="top-btn-wrap" *ngIf="!notImplemented">
+        <a class="btn btn-primary" [routerLink]="['/order/createOrder']">NEW Order</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="inner-content">
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-fix form-wrap m-b-15">
+        <div class="col-md-12">
+          <div class="form-inline">
+
+            <div class="form-group pull-right" *ngIf="!notImplemented">
+              <input type="text" [(ngModel)]="searchText" class="form-control search right-search" placeholder="Search">
+              <button class="btn btn-primary">GO</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-wrap">
+        <div class="table-wrapper table-responsive" id="no-more-tables">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Order Id</th>
+                <th>Customer Name</th>
+                <th>Order Date</th>
+                <td>Total</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let order of orders">
+                <td>{{order.id}}</td>
+                <td>{{order.customerName}}</td>
+                <td>{{order.orderDate|date:'mediumDate'}}</td>
+                <td>{{order.total|number : '1.2-2'}}</td>
+
+              </tr>
+
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

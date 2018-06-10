@@ -11,7 +11,7 @@ export class OrderService {
 
   constructor(private http: HttpClient) { }
 
-  private orderUrl = 'api/Orders';
+  private orderUrl = 'api/orders';
 
   saveOrder(order: OrderModel) {
     return this.http.post(`${this.orderUrl}`, order).catch(this.errorHandler);
