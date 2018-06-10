@@ -20,21 +20,16 @@ export class CreateProductComponent implements OnInit {
 
   saveProduct() {
     this.product = Object.assign({}, this.productForm.value)
-    console.log(this.product)
-
+  
     this.productService.saveProduct(this.product).subscribe(res => {
-      this.getProducts();
+     
     }, error => {
 
     })
-    console.log(this.productForm)
 
   }
 
-  getProducts() {
-    this.productService.getProducts().subscribe(res => console.log(res))
-  }
-
+ 
   private createProductForm() {
     this.productForm = this.fb.group({
       name: ["", Validators.required],

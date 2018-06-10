@@ -35,14 +35,12 @@ export class CreateCustomerComponent implements OnInit {
 
     if (this.customerId == 0 || this.customerId == undefined) {
       this.customer = Object.assign({}, this.customerForm.value)
-      console.log(this.customer)
-
+     
       this.customerService.saveCustomer(this.customer).subscribe(res => {
-        this.getCustomers();
+          this.router.navigate(['/customer'])
       }, error => {
 
       })
-      console.log(this.customerForm)
     }
 
     else {
@@ -53,21 +51,21 @@ export class CreateCustomerComponent implements OnInit {
   }
 
   updateCustomer() {
+
     this.customer = Object.assign({}, this.customerForm.value);
+    this.customer.id = this.customerId;
     this.customerService.updateCustomer(this.customer).subscribe(res => {
+
       this.router.navigate(['/customer'])
     }, error => { })
   }
 
-  getCustomers() {
-    this.customerService.getCustomers().subscribe(res => console.log(res))
-  }
 
   getCustomer(id: number) {
     this.customerService.getCustomer(id).subscribe(res => {
       this.customer = res;
       this.patchCustomerForm(this.customer);
-      console.log(res)
+    
     }
       , error => { })
   }
