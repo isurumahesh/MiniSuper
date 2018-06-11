@@ -35,9 +35,9 @@ export class CreateCustomerComponent implements OnInit {
 
     if (this.customerId == 0 || this.customerId == undefined) {
       this.customer = Object.assign({}, this.customerForm.value)
-     
+
       this.customerService.saveCustomer(this.customer).subscribe(res => {
-          this.router.navigate(['/customer'])
+        this.router.navigate(['/customer'])
       }, error => {
 
       })
@@ -65,18 +65,19 @@ export class CreateCustomerComponent implements OnInit {
     this.customerService.getCustomer(id).subscribe(res => {
       this.customer = res;
       this.patchCustomerForm(this.customer);
-    
+
     }
       , error => { })
   }
 
   private createCustomerForm() {
+    let emailregex = /^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$/;
     this.customerForm = this.fb.group({
       firstName: ["", Validators.required],
       lastName: "",
       address: "",
       mobileNo: "",
-      email: "",
+      email: ["", [Validators.required, Validators.pattern(emailregex)]],
     })
   }
 
